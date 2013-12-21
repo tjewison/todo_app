@@ -16,3 +16,6 @@
 /tmp
 
 /config/database.yml
+vendor/ruby
+
+/vendor/cache/
