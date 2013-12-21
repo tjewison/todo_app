@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>TODO List</h2>
+
+  <div ng-controller="TasksCtrl">
+    <div class="row">
+      <form class="form-inline" ng-submit="addTask()">
+        <div class="col-md-11">
+          <input type="text" class="form-control" ng-model="newTask.description">
+        </div>
+        <div class="col-md-1">
+          <input type="submit" class="btn btn-primary" value="Add">
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-mod-12">
+      <ul>
+        <li ng-repeat="task in tasks">
+          {{task.description}}
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
