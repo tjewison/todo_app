@@ -56,6 +56,6 @@ class TaskEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_entry_params
-      params.require(:task_entry).permit(:description)
+      params.require(:task_entry).permit(:description, :completed)
     end
 end
