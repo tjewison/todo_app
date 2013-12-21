@@ -1,24 +1,48 @@
 <div class="container">
-  <h2>TODO List</h2>
-
-  <div ng-controller="TasksCtrl">
-    <div class="row">
-      <form class="form-inline" ng-submit="addTask()">
-        <div class="col-md-11">
-          <input type="text" class="form-control" ng-model="newTask.description">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div id="todo-container" class="panel panel-default">
+        <div id="todo-header" class="panel-heading">
+          <h3 class="panel-title text-center">To-Do List</h3>
         </div>
-        <div class="col-md-1">
-          <input type="submit" class="btn btn-primary" value="Add">
+        <div class="panel-body">
+          <div ng-controller="TasksCtrl">
+          <div id="task-inserter" class="row">
+            <form class="form-inline" ng-submit="addTask()">
+              <div class="col-md-10">
+                <input type="text" class="form-control" ng-model="newTask.description">
+              </div>
+              <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" value="Add">
+              </div>
+            </form>
+          </div>
+          <!-- <h4 id="uncompleted-title">In Progress</h4> -->
+          <div class="row">
+            <div class="col-mod-12">
+              <ul id="task-uncompleted-list" class="list-unstyled task-list">
+                <li class="task-entry" ng-repeat="task in tasks| filter:{completed:false}:true">
+                    <span class="glyphicon glyphicon-check" ng-show="task.completed" ng-click="toggleCompleteTask(task)"></span>
+                    <span class="glyphicon glyphicon-unchecked" ng-show="!task.completed" ng-click="toggleCompleteTask(task)"></span>  
+                  {{task.description}}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <h4 id="completed-title">Completed</h4> -->
+          <div class="row">
+              <div class="col-mod-12">
+                <ul id="task-completed-list" class="list-unstyled task-list">
+                  <li class="task-entry" ng-repeat="task in tasks| orderBy:updateAt| filter:{completed:true}:true">
+                      <span class="glyphicon glyphicon-check" ng-show="task.completed" ng-click="toggleCompleteTask(task)"></span>
+                      <span class="glyphicon glyphicon-unchecked" ng-show="!task.completed" ng-click="toggleCompleteTask(task)"></span>  
+                    {{task.description}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
-    </div>
-    <div class="row">
-      <div class="col-mod-12">
-      <ul>
-        <li ng-repeat="task in tasks">
-          {{task.description}}
-        </li>
-      </ul>
       </div>
     </div>
   </div>

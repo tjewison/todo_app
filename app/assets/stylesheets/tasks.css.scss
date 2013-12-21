@@ -1,3 +1,43 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#todo-container{
+  margin-top: 5px;
+  #todo-header{
+    background-color: #C3C4FA;
+  }
+  #task-inserter{
+
+  }
+  
+  
+  #task-completed-list{
+    color: #6BC782;
+    span{
+      color: black;
+    }
+  }
+  #task-uncompleted-list{
+    padding-top: 5px;
+    span{
+      color: black;
+    }
+  }
+  .task-list{
+
+    
+
+
+
+  }
+
+  .task-entry{
+    margin-left: 5px;
+  }
+
+}
+
+
+
+
