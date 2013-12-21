@@ -8,6 +8,6 @@ app = angular.module("TodoApp", ["ngResource"])
   Task = $resource("/task_entries/:id.json", {id: "@id"}, {update: {method: "PUT"}})
   $scope.tasks = Task.query()
   $scope.addTask = ->
-    task = Task.save($scope.newTask)
-    $scope.tasks.push(task)
-    $scope.newTask = {}
+    task = Task.save $scope.newTask, -> 
+      $scope.tasks.push(task)
+      $scope.newTask = {}
