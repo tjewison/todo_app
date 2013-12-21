@@ -30,4 +30,19 @@ app.config ($httpProvider) ->
 
   $scope.updateAt = (task) ->
     new Date(task.updated_at)
-  ]
+
+  $scope.deleteTask = (task, confirm = false) ->
+    if confirm || window.confirm("Are you sure you want to delete the task:\n#{task.description}?")
+      $scope.tasks = _.without($scope.tasks, task)
+      task.$remove() 
+
+  $scope.deleteAll = ->
+    if window.confirm("Are you sure you want to delete ALL tasks?")
+      $scope.tasks.forEach (value, key) -> $scope.deleteTask(value, true)
+
+  $scope.deleteCompleted = ->
+    if window.confirm("Are you sure you want to delete all completed tasks?")
+      $scope.tasks.forEach (value, key) -> $scope.deleteTask(value, true) if value.completed
+
+]
+

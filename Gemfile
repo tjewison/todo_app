@@ -45,6 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'angularjs-rails'
+gem 'underscore-rails'
 
 group :development do
   gem 'better_errors'

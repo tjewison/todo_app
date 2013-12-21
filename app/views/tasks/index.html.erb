@@ -18,25 +18,33 @@
               </form>
             </div>
             <div class="row">
-              <div class="col-mod-12">
+              <div class="col-md-12">
                 <ul id="task-uncompleted-list" class="list-unstyled task-list">
                   <li class="task-entry" ng-repeat="task in tasks| filter:{completed:false}:true">
                       <span class="glyphicon glyphicon-check" ng-show="task.completed" ng-click="toggleCompleteTask(task)"></span>
-                      <span class="glyphicon glyphicon-unchecked" ng-show="!task.completed" ng-click="toggleCompleteTask(task)"></span>  
+                      <span class="glyphicon glyphicon-unchecked" ng-show="!task.completed" ng-click="toggleCompleteTask(task)"></span>
+                      <span class="glyphicon glyphicon-remove-circle" ng-click="deleteTask(task)"></span>
                     {{task.description}}
                   </li>
                 </ul>
               </div>
             </div>
             <div class="row">
-              <div class="col-mod-12">
+              <div class="col-md-12">
                 <ul id="task-completed-list" class="list-unstyled task-list">
                   <li class="task-entry" ng-repeat="task in tasks| orderBy:updateAt| filter:{completed:true}:true">
                     <span class="glyphicon glyphicon-check" ng-show="task.completed" ng-click="toggleCompleteTask(task)"></span>
-                    <span class="glyphicon glyphicon-unchecked" ng-show="!task.completed" ng-click="toggleCompleteTask(task)"></span>  
+                    <span class="glyphicon glyphicon-unchecked" ng-show="!task.completed" ng-click="toggleCompleteTask(task)"></span>
+                    <span class="glyphicon glyphicon-remove-circle" ng-click="deleteTask(task)"></span>
                     {{task.description}}
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-warning" ng-click="deleteCompleted()">Clear Completed</button>
+                <button class="btn btn-danger" ng-click="deleteAll()">Clear All</button>
               </div>
             </div>
           </div>
