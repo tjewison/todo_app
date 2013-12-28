@@ -19,3 +19,5 @@
 vendor/ruby
 
 /vendor/cache/
+
+/todo_app.sublime-workspace

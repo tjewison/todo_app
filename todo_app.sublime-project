@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": ".",
+      "folder_exclude_patterns": ["tmp","vendor/ruby", "vender/cache"],
+      "file_exclude_patterns": [".gitkeep"]
+		}
+	]
+}
