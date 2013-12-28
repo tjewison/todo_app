@@ -12,6 +12,7 @@ app.factory "Task", ["$resource", ($resource) ->
       delete data.updated_at
       JSON.stringify(data)
     }})]
+
 app.config ($httpProvider) ->
   authToken = $("meta[name=\"csrf-token\"]").attr("content")
   $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken
@@ -43,6 +44,5 @@ app.controller('TasksCtrl', ["$scope", "Task", ($scope, Task) ->
   $scope.deleteCompleted = ->
     if window.confirm("Are you sure you want to delete all completed tasks?")
       $scope.tasks.forEach (value, key) -> $scope.deleteTask(value, true) if value.completed
-
 ])
 
