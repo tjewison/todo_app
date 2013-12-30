@@ -21,3 +21,5 @@ vendor/ruby
 /vendor/cache/
 
 /todo_app.sublime-workspace
+
+/protractor/config/conf.js

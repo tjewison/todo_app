@@ -1,0 +1,9 @@
+exports.config = {
+  seleniumServerJar: "/usr/local/opt/selenium-server-standalone/selenium-server-standalone-2.39.0.jar",
+  specs: ['protractor/spec/*_spec.js', 'protractor/spec/*_test.js', 'protractor/spec/sample_spec.js'],
+  // Options to be passed to Jasmine-node.
+  jasmineNodeOpts: {
+    showColors: true,
+    defaultTimeoutInterval: 30000
+  }
+}
