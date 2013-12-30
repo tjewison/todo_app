@@ -1,3 +1,5 @@
+require('coffee-script');
+
 exports.config = {
   seleniumServerJar: "/usr/local/opt/selenium-server-standalone/selenium-server-standalone-2.39.0.jar",
   specs: ['protractor/spec/*_spec.js', 'protractor/spec/*_test.js', 'protractor/spec/sample_spec.js'],
@@ -5,5 +7,10 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000
+  },
+  onPrepare: function() {
+    global.select = global.by;
   }
 }
+
+// npm install -D coffee-script

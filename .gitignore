@@ -23,3 +23,5 @@ vendor/ruby
 /todo_app.sublime-workspace
 
 /protractor/config/conf.js
+
+/node_modules/
